@@ -34,11 +34,12 @@ const App = () => {
 
       <Row>
         <Col>
-          {prediction && <PredictionResult prediction={prediction} />}
+          {<PredictionResult prediction={prediction} />}
+          
         </Col>
       </Row>
 
-      <Row>
+     {/*  <Row>
         <Col>
           {chartData && (
             <div>
@@ -47,7 +48,7 @@ const App = () => {
             </div>
           )}
         </Col>
-      </Row>
+      </Row> */}
     </Container>
   );
 };
