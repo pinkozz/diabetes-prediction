@@ -25,7 +25,7 @@ const App = () => {
   };
 
   return (
-    <Container>
+    <Container style={{maxHeight: 'fit-content'}} >
       <Row>
         <Col>
           <InputForm onSubmit={handleFormSubmit} />

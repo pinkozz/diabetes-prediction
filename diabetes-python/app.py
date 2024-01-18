@@ -9,7 +9,10 @@ from sklearn.datasets import load_diabetes
 import numpy as np
 
 app = Flask(__name__)
-CORS(app)
+cors = CORS(app)
+
+
+
 
 clf = Perceptron(max_iter=100, random_state=42)
 scaler = MinMaxScaler()  # Instantiate MinMaxScaler
@@ -40,7 +43,7 @@ def predict():
         # Convert the feature values to a NumPy array
         features = np.array([
             data['age'],
-            1 if data['sex'].lower() == 'male' else 2,  # Assuming 1 for male, 2 for female
+            0 if data['sex'].lower() == 'male' else 1,  # Assuming 1 for male, 2 for female
             data['bmi'],
             data['bp'],
             data['s1'],
@@ -58,8 +61,12 @@ def predict():
 
         # Make the prediction
         prediction = int(clf.predict(normalized_features)[0])
+        response = jsonify({'prediction': prediction})
 
-        return jsonify({'prediction': prediction})
+        response.headers.add('Access-Control-Allow-Origin', '*')
+
+
+        return response
     except Exception as e:
         return jsonify({'error': str(e)})
 
