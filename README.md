@@ -1,5 +1,7 @@
 # DiabetesPrediction
 A program that's made for predicting diabetes.
+![Screenshot from 2024-01-18 21-23-31](https://github.com/pinkozz/diabetes-prediction/assets/136079534/50512f03-ad8f-4230-b215-003627e51c5c)
+
 
 # Usage
 1. Clone the repository
